@@ -147,6 +147,11 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
           <p>Responsible for storing data for the network, establishes data contracts with a bridge</p>
           </div>
         </section>
+        <section data-background-image="Storj-network-map.png" id="map" style="height:100%">
+          <div style="position:absolute;bottom:0;">
+            <p><small><a href="https://github.com/bobey/StorjMap">https://github.com/bobey/StorjMap</a></small></p>
+          </div>
+        </section>
         <section id="client">
           <h2 class="headline">Client (libstorj)</h2>
           <div style="width:50%;float:left;">
@@ -354,14 +359,21 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
           </ul>
           <p>Under the current design, each Renter is responsible to create their own view of reputation, there currently isn't a system in place to create consensus on reputation.</p>
         </section>
-        <section>
+        <section id="sips">
           <h2 class="headline">Designing and implementing a solution</h2>
-          <p>We drafted up improvement proposals to detail the implementation of a solution</p>
-          <ul>
-            <li>SIP6 "Farmer Load Balancing Based on Reputation"</li>
-            <li>SIP9 "Bandwidth Reputation and Accounting"</li>
-          </ul>
-          <p>More information at: https://github.com/Storj/sips</p>
+          <div style="width:50%;float:left;">
+            <div style="padding-right:2em;">
+              <p>We drafted up improvement proposals to detail the implementation of a solution</p>
+              <ul>
+                <li>SIP6 "Farmer Load Balancing Based on Reputation"</li>
+                <li>SIP9 "Bandwidth Reputation and Accounting"</li>
+              </ul>
+              <p>More information at: https://github.com/Storj/sips</p>
+            </div>
+          </div>
+          <div style="width:50%;float:left;">
+            <img data-src="Storj-improvement-proposals.png" width=""/>
+          </div>
         </section>
         <section>
           <h2 class="headline">SIP6: Farmer load balancing based on reputation</h2>

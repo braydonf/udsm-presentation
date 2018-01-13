@@ -230,6 +230,8 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
             <li>Currently written in JavaScript/Node.js</li>
             <li>Current single point of failure</li>
             <li>Functionality needs to be decentralized</li>
+            <li>Needs improvements for replication</li>
+            <li>Needs to recover shards via reed solomon</li>
             <li>Could also be described as a Renter</li>
             <li>https://github.com/Storj/bridge</li>
           </ul>
@@ -375,20 +377,29 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
             <img data-src="Storj-improvement-proposals.png" width=""/>
           </div>
         </section>
-        <section>
+        <section id="sip6">
           <h2 class="headline">SIP6: Farmer load balancing based on reputation</h2>
-          <p>A load balancing system to send data to more reliable sections of the network</p>
-          <ul>
-            <li>Creates two groups of Farmers called "active" and "benchmark"</li>
-            <li>The majority of the network data is sent to the "active" group, as to constantly be moving data to more reliable and performant parts of the network</li>
-            <li>Contracts and broadcast directly to Farmers in a large blast of 30 or more messages, any unused offers are cached in case there are issues with the actual data transfer</li>
-            <li>Before new Farmers join the network they need to perform a "proof-of-work" challenge to help mitigate Sybil attacks</li>
-            <li>Implemented and currently deployed</li>
-            <li>https://github.com/Storj/sips/blob/master/sip-0006.md</li>
-          </ul>
+          <div style="width:50%;float:left;">
+            <div style="padding-right:2em;">
+              <p>A load balancing system to send data to more reliable sections of the network</p>
+              <ul>
+                <li>Creates two groups of Farmers called "active" and "benchmark"</li>
+                <li>The majority of the network data is sent to the "active" group, as to constantly be moving data to more reliable and performant parts of the network</li>
+                <li>Contracts and broadcast directly to Farmers in a large blast of 30 or more messages, any unused offers are cached in case there are issues with the actual data transfer</li>
+                <li>Before new Farmers join the network they need to perform a "proof-of-work" challenge to help mitigate Sybil attacks</li>
+                <li>Implemented and currently deployed</li>
+                <li>https://github.com/Storj/sips/blob/master/sip-0006.md</li>
+              </ul>
+            </div>
+          </div>
+          <div style="width:50%;float:left;">
+            <img data-src="Storj-SIP6.png" width=""/>
+          </div>
         </section>
         <section>
           <h2 class="headline">SIP6: Lessons learned with deployment and activation</h2>
+          <div style="width:50%;float:left;">
+            <div style="padding-right:2em;">
           <p>The deployment of SIP6 was successful but had a few challenges that needed to be resolved</p>
           <ul>
             <li>Using a timestamp and LRU query introduced race conditions</li>
@@ -400,9 +411,16 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
             <li>The reliability and scalability issues with uploads were largely solved with more than 10x the rate of contracts and shard uploaded</li>
             <li>Timeouts for uploads went away completely shortly after activation</li>
           </ul>
+            </div>
+          </div>
+          <div style="width:50%;float:left;">
+            <img data-src="Storj-SIP6-deployment-issue.png" width=""/>
+          </div>
         </section>
-        <section data-transition="slide-out">
+        <section id="sip9">
           <h2 class="headline">SIP9: Bandwidth reputation and accounting</h2>
+          <div style="width:50%;float:left;">
+            <div style="padding-right:2em;">
           <p>An upcoming improvement to better track bandwidth usage and build more robust reputation metrics</p>
           <ul>
             <li>Establishes reputation system based on points for behavior</li>
@@ -411,6 +429,27 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
             <li>Implemented but not yet deployed</li>
             <li>https://github.com/Storj/sips/blob/master/sip-0009.md</li>
           </ul>
+            </div>
+          </div>
+          <div style="width:50%;float:left;">
+            <img data-src="Storj-SIP9.png" width=""/>
+          </div>
+        </section>
+        <section data-transition="slide-out">
+          <h2 class="headline">SIP9: Decision Matrix</h2>
+          <div style="width:50%;float:left;">
+            <div style="padding-right:2em;">
+              <p>Matrix for resolving conflicting reports about a shard transfer:</p>
+              <img data-src="Storj-SIP9-matrix.png"/>
+            </div>
+          </div>
+          <div style="width:50%;float:left;">
+            <ul>
+              <li>Green is always considered a success</li>
+              <li>Purple* is considered a failure, with the exception that a percentage threshold of Purple states is not exceeded and is otherwise considered a success</li>
+              <li>Red is always considered failure</li>
+            </ul>
+          </div>
         </section>
         <section data-transition="slide-in zoom-out">
           <h2 class="headline">So, what problems are next?</h2>
@@ -423,13 +462,16 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
             <li>Building consensus around reputation</li>
           </ul>
         </section>
-        <section data-background-color="#2683FF" data-transition="zoom-in" id="questions" id="questions" id="questions">
+        <section data-background-color="#2683FF" data-transition="zoom-in" id="questions" style="height:100%">
           <h2 class="headline">Questions?</h2>
           <h3>Contact:</h3>
           <ul>
             <li>https://github.com/braydonf/</li>
             <li>https://medium.com/@braydonf/</li>
           </ul>
+          <div style="position:absolute;bottom:1em;">
+            <p>https://github.com/braydonf/udsm-presentation</p>
+          </div>
         </section>
       </div>
     </div>

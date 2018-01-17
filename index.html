@@ -28,7 +28,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-background-image="cover-background.png" data-background-transition="zoom" data-background-color="#2683FF" data-transition="zoom-out">
-          <h1>Performance and reliability in untrusted storage networks</h1>
+          <h1>Reliability in untrusted storage networks</h1>
           <p>Utah Distributed Systems Meetup / January 18th, 2018 / Braydon Fuller / cc-by-nd</p>
         </section>
         <section data-transition="zoom-in zoom-out">
@@ -39,12 +39,12 @@
             <li>I work at Storj Labs, Inc. <em>(since 2016)</em></li>
             <li>Traveling from Seattle, Washington</li>
             <li>Previously worked at BitPay on Bitcoin libraries and infrastructure <em>(2014 to 2016)</em></li>
-            <li>Contributor to many free software, crypto and decentralized projects</li>
+            <li>Contributor to several free software, crypto and decentralized projects</li>
             <li>Engineered C++ backend to the most popular free software Bitcoin block explorer</li>
             <li>Worked heavily on C library libstorj and authored SIP5 standard</li>
             <li>Have authored several Storj Improvement Proposals</li>
-            <li>Part of an amazing team of engineers at Storj</li>
-            <li>Here to share a bit about the Storj network and a development story</li>
+            <li>Part of a great team of engineers at Storj</li>
+            <li>Here to give overview of the current Storj network and development process</li>
             <li>https://github.com/braydonf</li>
             <li>https://medium.com/@braydonf</li>
           </ul>
@@ -85,7 +85,7 @@
           <h4>✓ Data loss</h4>
           <p>Erasure encoding with Reed-Solomon and geographically diverse replication</p>
           <div style="font-size:0.7em;width:80%;">
-          <p style="color:#75bc00;">Upcoming challenges:</p>
+          <p style="color:#75bc00;">Upcoming work:</p>
           <ul>
             <li>Network redundancy and decentralization of file pointer and meta data</li>
             <li>Decentralized network to repair data decay with cryptocurrency payments</li>
@@ -453,13 +453,12 @@ static gf inverse[GF_SIZE+1];   /* inverse of field elem.               */
         </section>
         <section data-transition="slide-in zoom-out">
           <h2 class="headline">So, what problems are next?</h2>
-          <p>Here are a few moderately challenging tasks:</p>
+          <p>Here are a few upcoming challenges up next:</p>
           <ul>
             <li>Removing all remaining single points of failure and risks to data loss</li>
             <li>Network replicated redundancy of small "pointer" data that is able to be queried by only knowing a secret</li>
             <li>Decentralized smart contracts to audit, monitor and pay farmers for storing data</li>
             <li>Incentives for network to replicate and heal data when it's lost</li>
-            <li>Building consensus around reputation</li>
           </ul>
         </section>
         <section data-background-color="#2683FF" data-transition="zoom-in" id="questions" style="height:100%">
